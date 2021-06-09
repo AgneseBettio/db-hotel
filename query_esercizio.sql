@@ -33,11 +33,16 @@ WHERE `status` = 'accepted';
 
 
 -- 6. Qual è il prezzo massimo pagato?
-
+SELECT MAX(`price`)
+ FROM `pagamenti` 
+ WHERE `status` = 'accepted';
 
 
 -- 7. Seleziona gli ospiti riconosciuti con patente e nati nel 1975
-
+SELECT * 
+FROM `ospiti` 
+WHERE `document_type` = 'Driver License' 
+    AND YEAR(`date_of_birth`) >= '1979';
 
 
 -- 8. Quanti paganti sono anche ospiti?
