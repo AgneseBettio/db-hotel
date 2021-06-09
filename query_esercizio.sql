@@ -27,7 +27,9 @@ WHERE `name` LIKE 'D%';
 
 
 -- 5. Calcola il totale incassato degli ordini accepted
-
+SELECT SUM(`price`) 
+FROM `pagamenti` 
+WHERE `status` = 'accepted';
 
 
 -- 6. Qual è il prezzo massimo pagato?
