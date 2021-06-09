@@ -1,5 +1,4 @@
--- 1. Seleziona tutti gli ospiti che sono stati identificati con la carta di
--- identità - volutamente selezionato solo nome e cognome
+-- 1. Seleziona tutti gli ospiti che sono stati identificati con la carta di identità - volutamente selezionato solo nome e cognome
 SELECT `name`, `lastname` 
 FROM `ospiti` 
 WHERE `document_type` = 'CI';
@@ -13,8 +12,7 @@ WHERE YEAR(`date_of_birth`) > '1988';
 
 
 
--- 3. Seleziona tutti gli ospiti che hanno più di 20 anni (al momento
--- dell’esecuzione della query)
+-- 3. Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
 SELECT * 
 FROM `ospiti` 
 WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) >= '20';
@@ -46,7 +44,11 @@ WHERE `document_type` = 'Driver License'
 
 
 -- 8. Quanti paganti sono anche ospiti?
-
+SELECT `name`, `lastname` 
+FROM `paganti` 
+WHERE NOT `ospite_id` = 'NULL';
 
 
 -- 9. Quanti posti letto ha l’hotel in totale
+SELECT SUM(`beds`) 
+FROM `stanze`;
