@@ -19,7 +19,9 @@ WHERE YEAR(`date_of_birth`) > '1988';
 
 
 -- 4. Seleziona tutti gli ospiti il cui nome inizia con la D
-
+SELECT * 
+FROM `ospiti` 
+WHERE `name` LIKE 'D%';
 
 
 -- 5. Calcola il totale incassato degli ordini accepted
