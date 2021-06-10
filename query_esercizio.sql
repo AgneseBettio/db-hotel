@@ -40,13 +40,13 @@ SELECT MAX(`price`)
 SELECT * 
 FROM `ospiti` 
 WHERE `document_type` = 'Driver License' 
-    AND YEAR(`date_of_birth`) >= '1979';
+    AND YEAR(`date_of_birth`) = '1975';
 
 
 -- 8. Quanti paganti sono anche ospiti?
 SELECT `name`, `lastname` 
 FROM `paganti` 
-WHERE NOT `ospite_id` = 'NULL';
+WHERE `ospite_id` IS NOT NULL;
 
 
 -- 9. Quanti posti letto ha l’hotel in totale
